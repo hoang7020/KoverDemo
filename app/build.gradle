@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
     id "org.jetbrains.kotlinx.kover" version "0.8.3"
+    id "org.sonarqube" version "5.1.0.4882"
 }
 
 android {
@@ -34,6 +35,18 @@ android {
     }
     buildFeatures {
         compose true
+    }
+}
+
+sonar {
+    properties {
+        property "sonar.projectKey", "KoverDemo"
+        property "sonar.projectName", "KoverDemo"
+        property "sonar.host.url", "http://localhost:9000"
+        property "sonar.token", "sqp_8c6178f34dc5b9bd151eef130e9b76661554350a"
+        property "sonar.sources","src/main/java"
+        property "sonar.language","kotlin"
+        property "sonar.coverage.jacoco.xmlReportPaths", "$buildDir/reports/kover/report.xml"
     }
 }
 
