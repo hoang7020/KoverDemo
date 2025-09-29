@@ -47,6 +47,7 @@ sonar {
         property "sonar.sources","src/main/java"
         property "sonar.language","kotlin"
         property "sonar.coverage.jacoco.xmlReportPaths", "$buildDir/reports/kover/report.xml"
+
     }
 }
 
